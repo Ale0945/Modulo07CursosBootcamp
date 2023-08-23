@@ -1,18 +1,21 @@
 const bootcamp = require("./bootcamp.model")
+const user = require("./user.model")
+const sequelize = require("./../config/db.config")
 
 const db = {
-    bootcamp: require("./bootcamp.model"),
-    user: require("./user.model")
+    sequelize: sequelize,
+    bootcamp: require("./bootcamp.model.js"),
+    user: require("./user.model.js")
 }
 
 db.bootcamp.belongsToMany(db.user, {
     through: "bootcamp_user",
-    as: "user", 
+    as: "users", 
     foreignKey: "bootcamp_id"
 })
 db.user.belongsToMany(db.bootcamp, {
     through: "bootcamp_user",
-    as: "bootcamp",
+    as: "bootcamps",
     foreignKey: "user_id"
 })
 module.exports = db

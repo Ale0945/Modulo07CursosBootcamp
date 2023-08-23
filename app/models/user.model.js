@@ -1,5 +1,5 @@
-const Sequelize = require("sequelize")
-const conexion = require("./../config/db.config")
+const Sequelize = require("sequelize");
+const conexion = require("./../config/db.config");
 
 
 const User = conexion.define("user" , {
@@ -25,4 +25,4 @@ const User = conexion.define("user" , {
     }
 
 })
-module.exports = User
+module.exports = User;

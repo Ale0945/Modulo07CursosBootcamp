@@ -1,13 +1,13 @@
 const Sequelize = require("sequelize")
-const conexion = require("./../config/db.config")
+const conexion = require("./../config/db.config.js")
 
 
 const bootcamp = conexion.define("bootcamp", {
-    /* id:{
+    id:{
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
-    }, */
+    },
     title: {
         type: Sequelize.STRING,
         allowNul:false,
@@ -24,4 +24,4 @@ const bootcamp = conexion.define("bootcamp", {
         unique: true
     },
 })
-module.exports = bootcamp
+module.exports = bootcamp;
